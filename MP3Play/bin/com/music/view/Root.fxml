@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.music.view.controller.RootController">
+   <bottom>
+      <HBox id="hbox" fx:id="playManage" prefHeight="80.0" prefWidth="800.0" spacing="10.0" stylesheets="@root.css" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <JFXButton id="pre_music" fx:id="pre_music" prefHeight="35.0" prefWidth="40.0" stylesheets="@root.css" text="|&lt;" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="15.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton id="play_music" fx:id="play_music" ellipsisString="" onMouseClicked="#handlePlayMusic" prefHeight="45.0" prefWidth="45.0" stylesheets="@root.css" textFill="#f8f8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="13.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton id="next_music" fx:id="next_music" prefHeight="35.0" prefWidth="40.0" stylesheets="@root.css" text="&gt;|" textFill="#fff9f9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="15.0" />
+               </HBox.margin>
+            </JFXButton>
+            <Label fx:id="startTime" text="time" textFill="#10c58f">
+               <HBox.margin>
+                  <Insets bottom="20.0" top="18.0" />
+               </HBox.margin>
+            </Label>
+            <JFXSlider fx:id="play_process" prefHeight="14.0" prefWidth="214.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" top="15.0" />
+               </HBox.margin>
+            </JFXSlider>
+            <Label fx:id="endTime" prefHeight="18.0" prefWidth="32.0" text="end" textFill="#10c58f">
+               <HBox.margin>
+                  <Insets bottom="20.0" top="18.0" />
+               </HBox.margin>
+            </Label>
+            <JFXToggleButton fx:id="barrage" ellipsisString="" prefHeight="69.0" prefWidth="68.0" toggleColor="#008f3c" toggleLineColor="#78c294" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXToggleButton>
+            <JFXSlider fx:id="audio_balance" prefHeight="14.0" prefWidth="77.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" right="20.0" top="15.0" />
+               </HBox.margin>
+            </JFXSlider>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="120.0" top="20.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <GridPane prefHeight="682.0" prefWidth="117.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="455.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="455.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="455.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="551.0" minHeight="10.0" prefHeight="546.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="48.0" prefWidth="113.0" text="  本地音乐" textFill="#0ecc67" />
+            <Label layoutX="10.0" layoutY="19.0" prefHeight="34.0" prefWidth="116.0" text="  我的心情" textFill="#68c6c6" GridPane.rowIndex="1" />
+            <Separator orientation="VERTICAL" prefHeight="46.0" prefWidth="3.0" />
+            <Separator orientation="VERTICAL" prefHeight="32.0" prefWidth="3.0" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="musicListTable" prefHeight="683.0" prefWidth="683.0" stylesheets="@root.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="titleColumn" prefWidth="122.0" text="音乐标题" />
+                  <TableColumn fx:id="specialColumn" prefWidth="208.0" text="专辑" />
+                  <TableColumn fx:id="singerColumn" prefWidth="134.0" text="歌手" />
+                  <TableColumn fx:id="timeColumn" prefWidth="120.0" text="时长" />
+                  <TableColumn fx:id="sizeColumn" minWidth="0.0" prefWidth="84.0" text="大小" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <HBox fx:id="winManage" prefHeight="41.0" prefWidth="800.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton id="btn_min" fx:id="btn_min" ellipsisString="" maxHeight="20.0" onMouseClicked="#handleWinMin" prefHeight="27.0" prefWidth="26.0" stylesheets="@root.css" text="-" textFill="#55ddd8" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+             
+            </JFXButton>
+            <JFXButton id="btn_max" fx:id="btn_max" ellipsisString="" onMouseClicked="#handleWinMax" prefHeight="27.0" prefWidth="26.0" stylesheets="@root.css" textFill="#242222">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+      
+            </JFXButton>
+            <JFXButton id="btn_close" fx:id="btn_close" ellipsisString="" onMouseClicked="#handleClose" prefHeight="27.0" prefWidth="26.0" stylesheets="@root.css" textFill="#2f2a2a">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="710.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>

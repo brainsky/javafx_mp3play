@@ -1,0 +1,57 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#btn_close{
+	-fx-cursor: hand;
+}
+#btn_close{
+	-fx-background-color:#ea1642;
+	-fx-background-radius: 18px;
+}
+#pane{
+	-fx-background-color: #24f0ff;
+}
+#hbox{
+	-fx-background-color:#bcf1f3;
+}
+#btn_min{
+	-fx-cursor: hand;
+}
+#btn_min{
+	-fx-background-color:#2bfb6d;
+	-fx-background-radius: 18px;
+}
+#btn_max{
+	-fx-cursor: hand;
+}
+#btn_max{	
+	-fx-background-color:#ffa321;
+	-fx-background-radius: 18px;
+}
+#pre_music{
+	-fx-background-color: #ffa321;
+	-fx-background-radius: 25px;
+}
+#play_music{
+	-fx-background-color: #ffa321;
+	-fx-background-radius: 30px;
+}
+#next_music{
+	-fx-background-color: #ffa321;
+	-fx-background-radius: 25px;
+}
+.table-view{
+	-fx-cursor:hand;
+	-fx-background-color:#f8f8f8;
+}
+.table-view .filler{
+	-fx-background-color:#1dc2c2 ;
+}
+.table-view .column-header{
+	-fx-background-color: #1dc2c2;
+}
+.table-view .column-header-background{
+	-fx-background-color: linear-gradient(#f5f5f5 0%,#1dc2c2 100%) ;
+}
+.table-view .column-header-background .label{
+	-fx-background-color: linear-gradient(#f5f5f5 0%,#1dc2c2 100%) ;
+	-fx-text-fill:white ;
+}
